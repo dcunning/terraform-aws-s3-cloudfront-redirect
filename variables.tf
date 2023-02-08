@@ -8,6 +8,12 @@ variable "redirect_target" {
   description = "The FQDN to redirect to"
 }
 
+variable "redirect_protocol" {
+  type        = string
+  description = "The protocol of the redirect: http or https"
+  default     = "https"
+}
+
 variable "force_destroy" {
   type        = string
   description = "The force_destroy argument of the S3 bucket"
@@ -17,6 +23,12 @@ variable "force_destroy" {
 variable "ssl_certificate_arn" {
   type        = string
   description = "ARN of the certificate covering var.fqdn"
+}
+
+variable "minimum_ssl_protocol" {
+  type        = string
+  description = "The minimum version of the SSL protocol that you want CloudFront to use for HTTPS connections"
+  default     = "TLSv1"
 }
 
 variable "web_acl_id" {

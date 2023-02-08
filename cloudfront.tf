@@ -78,7 +78,7 @@ resource "aws_cloudfront_distribution" "main" {
   viewer_certificate {
     acm_certificate_arn      = var.ssl_certificate_arn
     ssl_support_method       = "sni-only"
-    minimum_protocol_version = "TLSv1"
+    minimum_protocol_version = var.minimum_ssl_protocol
   }
 
   web_acl_id = var.web_acl_id
