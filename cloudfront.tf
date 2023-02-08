@@ -6,6 +6,7 @@
 resource "aws_cloudfront_distribution" "main" {
   provider     = aws.cloudfront
   http_version = "http2"
+  comment      = var.fqdn
 
   origin {
     origin_id   = "origin-${var.fqdn}"
